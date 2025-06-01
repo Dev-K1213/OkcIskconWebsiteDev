@@ -591,48 +591,139 @@ strong {
 
 
 /*---------------------------------------
-  Annoucements              
+  Event             
 -----------------------------------------*/
+/* General section styling */
 .announcements-section {
   background-image: url('../images/annoucementblur.jpg');
   background-color: #704010;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  
+  /* Increased size for the whole section */
+  min-height: 700px; /* Adjust this value to make the section taller overall */
+  padding-top: 100px; /* Increased padding top for more space above content */
+  padding-bottom: 80px; /* Increased padding bottom for more space below content */
 }
 
+.announcements-section h2 {
+  color: #ffffff;
+  font-size: 2.5rem; /* Slightly larger heading */
+  font-weight: bold;
+  margin-bottom: 40px; /* More space below heading */
+}
+
+/* Left column (Events List) (mostly unchanged, minor adjustments for vertical spacing) */
+.events-scheduled {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 25px; /* Slightly more padding */
+  border-radius: 10px;
+  height: 100%;
+  box-sizing: border-box;
+  color: #ffffff;
+  margin-bottom: 30px; /* More space on smaller screens */
+}
+
+.events-scheduled ul {
+  list-style: none;
+  padding: 0;
+}
+
+.events-scheduled ul li {
+  margin-bottom: 12px; /* Slightly more space between list items */
+}
+
+.events-scheduled ul li a {
+  color: #a0d9f0;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0; /* More padding for click area */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.2s ease;
+}
+
+.events-scheduled ul li a:hover {
+  color: #ffffff;
+}
+
+.events-scheduled ul li a span {
+  float: right;
+  font-size: 1em; /* Slightly larger text */
+  color: #bbb;
+}
+
+/* --- Horizontal Scroller Specific Styles --- */
 .announcements-scroll {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased gap between cards */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem; /* More space for the scrollbar and visual break */
+  padding-left: 15px; /* Increased padding at ends */
+  padding-right: 15px;
 }
 
 .announcement-card {
   scroll-snap-align: start;
   flex-shrink: 0;
-  width: 300px;
-  max-height: 100%;
-  transition: transform 0.2s;
+  width: 350px; /* Increased width of individual cards */
+  transition: transform 0.2s ease;
+
+  background-color: #fcefc7;
+  color: #333;
+  padding: 1.25rem; /* Increased padding inside the card */
+  border-radius: 0.75rem; /* Slightly larger border-radius */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* More prominent shadow */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  /* Increased height for the cards to accommodate larger image */
+  min-height: 550px; /* Significantly increased min-height for cards */
 }
+
 .announcement-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px); /* More pronounced lift effect on hover */
+}
+
+.announcement-card img {
+  width: 100%;
+  height: auto;
+  flex-grow: 1; /* Image takes available space */
+  object-fit: contain; /* Ensure full image is visible */
+  
+  /* Make image take up even more space within the card */
+  max-height: 95%; /* Image can now take up to 85% of the card height */
+  
+  margin-bottom: 0.5rem; /* More space between image and text */
+  border-radius: 0.5rem; /* Larger border-radius for the image */
 }
 
 .announcement-card h5 {
-  color: #004080; /* Headline */
+  color: #d97706;
+  margin-top: 0.75rem; /* More space above heading */
+  margin-bottom: 0.3rem;
+  font-size: 1.25rem; /* Slightly larger heading within card */
+  font-weight: bold;
 }
 
 .announcement-card p {
-  color: #333333; /* Body text */
+  color: #333333;
+  font-size: 1rem; /* Slightly larger body text */
+  margin-bottom: 0.75rem; /* More space below paragraph */
 }
 
+/* Button Styling (increased size) */
 .btn-primary {
-  background-color: #ff6600; /* Bright orange */
+  background-color: #ff6600;
   border-color: #ff6600;
   color: white;
+  margin-top: auto;
+  padding: 0.75rem 1.5rem; /* Larger button padding */
+  font-size: 1rem; /* Slightly larger button text */
 }
 
 .btn-primary:hover {
@@ -640,24 +731,18 @@ strong {
   border-color: #e65c00;
 }
 
-.announcement-card {
-  background-color: #fcefc7; /* Light yellow */
-  color: #333; /* Text color inside the card */
-}
-.announcement-card h5 {
-  color: #d97706; /* Orange-brown */
-}
+/* Custom Scrollbar Styling (unchanged, but applies to larger scroller) */
 .announcements-scroll::-webkit-scrollbar {
-  height: 12px; /* Thickness */
+  height: 12px;
 }
 
 .announcements-scroll::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Track color */
+  background: #f0f0f0;
   border-radius: 10px;
 }
 
 .announcements-scroll::-webkit-scrollbar-thumb {
-  background: #d97706; /*  slider color */
+  background: #d97706;
   border-radius: 10px;
 }
 
@@ -665,8 +750,50 @@ strong {
   background: #b45309;
 }
 
+/* Modal image responsiveness (unchanged) */
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
+/* Responsive Adjustments (updated min-heights for larger cards) */
+@media (max-width: 991px) {
+  .announcement-card {
+    width: 320px; /* Adjusted width for tablets */
+    min-height: 500px; /* Adjusted min-height for tablets */
+  }
+  .announcements-section {
+    min-height: 650px; /* Adjust section height for tablets */
+  }
+}
 
+@media (max-width: 767px) {
+  .col-md-4, .col-md-8 {
+    width: 100%;
+  }
+  .events-scheduled {
+    margin-bottom: 25px;
+  }
+  .announcements-scroll {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .announcement-card {
+    width: 90%; /* Card takes 90% width of screen */
+    min-height: 450px; /* Adjust min-height for mobile */
+  }
+  .announcements-section {
+    min-height: auto; /* Let content dictate height on mobile */
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  .announcements-section h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+}
 /*---------------------------------------
   SCHEDULE              
 -----------------------------------------*/
