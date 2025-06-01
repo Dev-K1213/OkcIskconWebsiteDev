@@ -366,6 +366,13 @@ strong {
   margin-top: 51px;
 }
 
+@media (max-width: 767px) {
+  .sticky-wrapper {
+    margin-top: 0;
+  }
+}
+
+
 .sticky-wrapper.is-sticky .navbar {
   background-color: var(--dark-color);
 }
