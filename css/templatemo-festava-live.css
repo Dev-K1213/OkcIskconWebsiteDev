@@ -638,7 +638,7 @@ strong {
   color: #a0d9f0;
   text-decoration: none;
   display: block;
-  padding: 10px 0; /* More padding for click area */
+  padding: 18px 0; /* More padding for click area */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: color 0.2s ease;
 }
