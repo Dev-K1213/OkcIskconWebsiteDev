@@ -631,7 +631,7 @@ strong {
 }
 
 .events-scheduled ul li {
-  margin-bottom: 12px; /* Slightly more space between list items */
+  margin-bottom: 10px; /* Slightly more space between list items */
 }
 
 .events-scheduled ul li a {
@@ -718,7 +718,10 @@ strong {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 20px;
+  padding-top: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0px 40px 0 40px;
 }
 
 .custom-carousel-track-wrapper {
@@ -728,11 +731,12 @@ strong {
 
 /* Carousel card sizing */
 .carousel-card {
-  flex: 0 0 360px; /* Wider card: try 320px or more */
+  flex: 0 0 48%; /* Wider card: try 320px or more */
+  max-width: 48%;
   margin: 0 10px;
   background: #fff;
   border-radius: 12px;
-  padding: 16px;
+  padding: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
@@ -750,38 +754,57 @@ strong {
 }
 
 .carousel-btn {
-  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
   border: none;
-  font-size: 30px;
+  padding: 20px;             /* Increased padding */
+  font-size: 30px;           /* Bigger arrow */
+  z-index: 2;
   cursor: pointer;
-  padding: 10px;
-  z-index: 10;
-  color: #333;
-  transition: transform 0.2s ease;
+  border-radius: 50%;        /* Optional: make it round */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 60px;               /* Optional: fixed size */
+  height: 60px;              /* Optional: fixed size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.carousel-btn.prev {
+  left: -30px; /* Adjust if needed */
+}
+.carousel-btn.next {
+  right: -30px; /* Adjust if needed */
+}
+
 .carousel-btn:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 /* Flex layout for section */
 .events-layout {
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 30px;
+  gap: 30px; /* Adjust this value to control space between the list and carousel */
+  align-items: flex-start; /* THIS IS THE MOST IMPORTANT ONE for top alignment */
+  justify-content: space-between; /* Distributes space, useful for filling width */
+  flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+  margin-top: 30px; /* Space below the heading */
 }
+
 
 /* Left Column (event list) */
 .event-list {
-  flex: 1;
-  min-width: 300px;
+  flex: 1; /* Allows it to grow and shrink, taking up available space */
+  min-width: 300px; /* Ensures it doesn't get too small */
+  /* Ensure no conflicting top padding or margin here */
 }
 
 /* Right Column (carousel) */
 .event-carousel {
-  flex: 2;
-  min-width: 600px;
+  flex: 2; /* Allows it to take up more space proportionally than the list */
+  min-width: 600px; /* Ensures it doesn't get too small */
+  /* Ensure no conflicting top padding or margin here */
 }
 
 /* Responsive behavior */
