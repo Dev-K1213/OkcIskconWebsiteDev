@@ -6,7 +6,7 @@
   let currentIndex = 0;
 
   function updateCarousel() {
-    const cardWidth = cards[0].offsetWidth + 27.3; // includes margin/padding
+    const cardWidth = cards[0].offsetWidth + 24; // includes margin/padding
     track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
   }
 

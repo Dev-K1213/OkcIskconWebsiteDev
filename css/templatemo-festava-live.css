@@ -719,8 +719,8 @@ strong {
   position: relative;
   overflow: hidden;
   padding-top: 5px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 63px;
+  padding-right: 63px;
   margin: 0px 40px 0 40px;
 }
 
@@ -765,18 +765,18 @@ strong {
   cursor: pointer;
   border-radius: 50%;        /* Optional: make it round */
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  width: 60px;               /* Optional: fixed size */
-  height: 60px;              /* Optional: fixed size */
+  width: 50px;               /* Optional: fixed size */
+  height: 50px;              /* Optional: fixed size */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .carousel-btn.prev {
-  left: -30px; /* Adjust if needed */
+  left: 12px; /* Adjust if needed */
 }
 .carousel-btn.next {
-  right: -30px; /* Adjust if needed */
+  right: 2px; /* Adjust if needed */
 }
 
 .carousel-btn:hover {
