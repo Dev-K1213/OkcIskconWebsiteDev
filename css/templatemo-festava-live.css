@@ -339,7 +339,7 @@ strong {
   position: absolute;
   top: 0;
   left: 0;
-  object-fit: cover;
+  /*object-fit: cover;*/
   width: 100%;
   height: 100%;
 }
@@ -653,69 +653,6 @@ strong {
   color: #bbb;
 }
 
-/* --- Horizontal Scroller Specific Styles --- */
-.announcements-scroll {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem; /* Increased gap between cards */
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 1.5rem; /* More space for the scrollbar and visual break */
-  padding-left: 15px; /* Increased padding at ends */
-  padding-right: 15px;
-}
-
-.announcement-card {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  width: 350px; /* Increased width of individual cards */
-  transition: transform 0.2s ease;
-
-  background-color: #fcefc7;
-  color: #333;
-  padding: 1.25rem; /* Increased padding inside the card */
-  border-radius: 0.75rem; /* Slightly larger border-radius */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* More prominent shadow */
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-  /* Increased height for the cards to accommodate larger image */
-  min-height: 550px; /* Significantly increased min-height for cards */
-}
-
-.announcement-card:hover {
-  transform: translateY(-8px); /* More pronounced lift effect on hover */
-}
-
-.announcement-card img {
-  width: 100%;
-  height: auto;
-  flex-grow: 1; /* Image takes available space */
-  object-fit: contain; /* Ensure full image is visible */
-  
-  /* Make image take up even more space within the card */
-  max-height: 95%; /* Image can now take up to 85% of the card height */
-  
-  margin-bottom: 0.5rem; /* More space between image and text */
-  border-radius: 0.5rem; /* Larger border-radius for the image */
-}
-
-.announcement-card h5 {
-  color: #d97706;
-  margin-top: 0.75rem; /* More space above heading */
-  margin-bottom: 0.3rem;
-  font-size: 1.25rem; /* Slightly larger heading within card */
-  font-weight: bold;
-}
-
-.announcement-card p {
-  color: #333333;
-  font-size: 1rem; /* Slightly larger body text */
-  margin-bottom: 0.75rem; /* More space below paragraph */
-}
-
 /* Button Styling (increased size) */
 .btn-primary {
   background-color: #ff6600;
@@ -729,25 +666,6 @@ strong {
 .btn-primary:hover {
   background-color: #e65c00;
   border-color: #e65c00;
-}
-
-/* Custom Scrollbar Styling (unchanged, but applies to larger scroller) */
-.announcements-scroll::-webkit-scrollbar {
-  height: 12px;
-}
-
-.announcements-scroll::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  border-radius: 10px;
-}
-
-.announcements-scroll::-webkit-scrollbar-thumb {
-  background: #d97706;
-  border-radius: 10px;
-}
-
-.announcements-scroll::-webkit-scrollbar-thumb:hover {
-  background: #b45309;
 }
 
 /* Modal image responsiveness (unchanged) */
@@ -794,6 +712,91 @@ strong {
     margin-bottom: 25px;
   }
 }
+
+.custom-carousel-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.custom-carousel-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Carousel card sizing */
+.carousel-card {
+  flex: 0 0 360px; /* Wider card: try 320px or more */
+  margin: 0 10px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Slight zoom on hover */
+.carousel-card:hover {
+  transform: scale(1.03);
+}
+
+/* Make sure carousel track allows wider cards */
+.custom-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.carousel-btn {
+  background-color: #fff;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+.carousel-btn:hover {
+  transform: scale(1.2);
+}
+/* Flex layout for section */
+.events-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Left Column (event list) */
+.event-list {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Right Column (carousel) */
+.event-carousel {
+  flex: 2;
+  min-width: 600px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .events-layout {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .event-carousel,
+  .event-list {
+    width: 100%;
+  }
+}
+
 /*---------------------------------------
   SCHEDULE              
 -----------------------------------------*/
