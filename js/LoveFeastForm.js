@@ -1,3 +1,4 @@
+
 document.getElementById('sponsor-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -8,17 +9,22 @@ document.getElementById('sponsor-form').addEventListener('submit', function (eve
     const amount = document.getElementById('donation-amount')?.value || '';
     const paypalUrl = `https://www.paypal.com/donate/?hosted_button_id=552L99DYHA7VG${amount ? '&amount=' + encodeURIComponent(amount) : ''}`;
 
-    fetch('https://formspree.io/f/xwpbejrz', {
+    fetch('https://formspree.io/f/manjqrzw', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: formData
     }).then(response => {
         if (response.ok) {
-            alert("Thank you! Redirecting to PayPal...");
+            alert("Thank you! Clicking OK will take you to PayPal to complete your donation.");
 
-            
-                window.open(paypalUrl, '_blank');
-        
+            // Clear form after a short delay to give alert time to show
+            setTimeout(() => {
+                form.reset();
+            }, 300);
+
+            // Open PayPal link
+            window.open(paypalUrl, '_blank');
+
         } else {
             alert("Oops! Something went wrong submitting the form.");
         }
@@ -27,3 +33,4 @@ document.getElementById('sponsor-form').addEventListener('submit', function (eve
         alert("Submission failed. Please try again.");
     });
 });
+
