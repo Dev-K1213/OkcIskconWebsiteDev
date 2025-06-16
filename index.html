@@ -204,6 +204,7 @@ https://templatemo.com/tm-583-festava-live
       <div class="col-md-4">
         <div class="events-scheduled">
           <ul class="list-unstyled">
+            <li><a href="#" data-bs-toggle="modal" data-bs-target = "#SwamiMahrajModal">Special Program with HH Vedavyasapriya Swami Maharaj<span>June 17th - 18th from 7 - 8:30 P.M.</span></a></li>
             <li><a href="#" data-bs-toggle="modal" data-bs-target = "#">Festival of Joy<span>Sep 7th</span></a></li>
             <li><a href="#" data-bs-toggle="modal" data-bs-target = "#RathaYatraModal">Festival of Joy Ratha Yatra Fest Prep!<span>July 13 thru Aug 31 Times TBD</span></a></li>
             <li><a href="#" data-bs-toggle="modal" data-bs-target = "#VrindavanDasModal">Special Program by His Grace Vrindavan Prabhu<span>June 9th - 10th from 7 - 9 P.M.</span></a></li>
@@ -219,12 +220,19 @@ https://templatemo.com/tm-583-festava-live
         <div class="announcements-scroll">
 
         <div class="announcement-card p-4 rounded shadow">
+            <img src="images/SwamiMaharaj.jpg" alt="SwamiMaharaj" class="img-fluid mb-3 rounded">
+            <h3 style="color:rgb(184, 45, 45)">Special Program</h2>
+            <p class="mb-4">June 17th - 18th from 7 - 8:30 P.M.</p>
+            <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#SwamiMahrajModal">Read more and RSVP</a>
+        </div>
+
+        <div class="announcement-card p-4 rounded shadow">
             <img src="images/FestivalofJoyflyer_page-0001.jpg" alt="Festival" class="img-fluid mb-3 rounded">
             <h3 style="color:rgb(184, 45, 45)">Festival of Joy</h2>
             <p class="mb-4">Sep 7th</p>
             <a href="#" class="btn btn-primary btn-sm" >Coming Soon!</a>
         </div>
-
+z
         <div class="announcement-card p-4 rounded shadow">
             <img src="images/festivalofjoyprep.jpg" alt="rathaYatra" class="img-fluid mb-3 rounded">
             <h4 style="color:rgb(184, 45, 45)">Ratha Yatra Fest Prep</h3>
@@ -270,6 +278,31 @@ https://templatemo.com/tm-583-festava-live
 </section>
 
 
+<div class="modal fade" id="SwamiMahrajModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title">Special Program by HH Vedavyasapriya Swami Maharaj<h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+            <p class="mb-3">His Holiness Vedavyasapriya Swami Maharaj was born in an Audichya Sahasra Brahmin family on 1st August 1944, Sravan Sud Dwadashi, which is celebrated as Pavitra Dwadashi and follows Pavitraropana Ekadashi. 
+            <a href="http://vvpswami.page.tl/" target="_new" style="color:blue"><u>Vedavyasapriya Swami</u></a> worked as a research biochemist in purvasrama both in East Africa and USA. Within a week of arrival in the USA, he had association of the disciples of His Divine Grace, Bhaktivedanta Srila Prabhupada. Through his deep realizations 
+            he desired to serve the humanity under the full shelter of the Supreme Absolute Truth. To know more about HH Vedavyasapriya Swami Maharaj please click <a href="http://www.vvpswami.com/index.html" target="_new" style="color:blue"><u>here</u></a> 
+            </p>
+            <h4 style="color: red" class="mb-3">Please RSVP for this eveny by contacting us at (302)-743-5959</h2>
+            <p class="mb-4">June 17th - 18th from 7 - 8:30 P.M.</p>
+      </div>
+      <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+        <i class="fas fa-xmark me-1"></i> Close
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <div class="modal fade" id="RathaYatraModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -304,6 +337,7 @@ https://templatemo.com/tm-583-festava-live
     </div>
   </div>
 </div>
+
 
 
 <div class="modal fade" id="VrindavanDasModal" tabindex="-1" aria-hidden="true">
@@ -791,6 +825,90 @@ T e m p l a t e M o
         <script src="js/custom.js"></script>
         <script src="carouselclick.js"></script>
         <script src="js/carousel.js"></script>
-        <script src="js/LoveFeastForm.js"></script>
+        <script>
+            document.getElementById('sponsor-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Get the selected date from the hidden input
+    const selectedDateValue = document.getElementById('selected-date').value;
+
+    if (!selectedDateValue) {
+        alert('Please select a Sunday for your Love Feast sponsorship');
+        return; // Prevent form submission if no date is selected
+    }
+
+    // Add the date to the form data (it's already in selectedDateValue)
+    formData.append('feast-date', selectedDateValue);
+
+    // Submit form data to Formspree
+    fetch('https://formspree.io/f/manjqrzw', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+    }).then(response => {
+        if (response.ok) {
+            // Clear the date inputs
+            document.getElementById('feast-date').value = '';
+            document.getElementById('selected-date').value = '';
+            
+            // Redirect to PayPal donation page
+            window.location.href = 'https://www.paypal.com/ncp/payment/LDAP6JXD6GZUG';
+            
+        } else {
+            alert("Oops! Something went wrong submitting the form.");
+        }
+    }).catch(error => {
+        console.error("Formspree error:", error);
+        alert("Submission failed. Please try again.");
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const feastDateInput = document.getElementById('feast-date');
+    const selectedDateInput = document.getElementById('selected-date');
+    
+    // Set min date to today
+    const today = new Date();
+    // Ensure the min date is correctly formatted as YYYY-MM-DD
+    feastDateInput.min = today.toISOString().split('T')[0];
+    
+    // Set max date to 1 year from today
+    const maxDate = new Date();
+    maxDate.setFullYear(today.getFullYear() + 1);
+    // Ensure the max date is correctly formatted as YYYY-MM-DD
+    feastDateInput.max = maxDate.toISOString().split('T')[0];
+    
+    // Function to check if a date is a Sunday
+    function isSunday(date) {
+        // getDay() returns 0 for Sunday, 1 for Monday, ..., 6 for Saturday
+        return date.getDay() === 0;
+    }
+    
+    // Handle date selection
+    feastDateInput.addEventListener('change', function(e) {
+        const selectedDateString = e.target.value; // Get the date string in YYYY-MM-DD format
+        
+        if (selectedDateString) { // Only proceed if a date is actually selected
+            const selectedDate = new Date(selectedDateString + 'T00:00:00'); // Parse as UTC to avoid timezone issues
+            
+            if (!isSunday(selectedDate)) {
+                alert('Please select a Sunday for your Love Feast sponsorship');
+                feastDateInput.value = ''; // Clear the input if not a Sunday
+                selectedDateInput.value = ''; // Clear the hidden input
+            } else {
+                // If it IS a Sunday, set the hidden input
+                selectedDateInput.value = selectedDateString;
+            }
+        } else {
+            // If the input is cleared by the user, also clear the hidden input
+            selectedDateInput.value = '';
+        }
+    });
+
+});
+        </script>
     </body>
 </html>
