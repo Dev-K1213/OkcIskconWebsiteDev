@@ -22,11 +22,38 @@
 
         <link href="css/templatemo-festava-live.css" rel="stylesheet">
 
+        <style>
+            .announcement-popup {
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #b82d2d;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+                z-index: 1000;
+                opacity: 0;
+                text-align: center;
+                font-size: 1.2em;
+                transition: opacity 0.5s ease-in-out;
+                min-width: 300px;
+            }
+            .announcement-popup a {
+                color: white;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+            .announcement-popup.show {
+                opacity: 1;
+            }
+        </style>
+
         
 <!-- TODO:
 
-Flyer rotation script
-Hit script
+
 
 -->
 
@@ -43,6 +70,10 @@ https://templatemo.com/tm-583-festava-live
     <body>
 
         <main>
+
+            <div id="announcementPopup" class="announcement-popup">
+                Visit our new <a href="https://festivalofjoyokc.org/" target="_new">Festival of Joy</a> site!
+            </div>
 
             <!-- <header class="site-header">
                 <div class="container">
@@ -205,7 +236,7 @@ https://templatemo.com/tm-583-festava-live
         <div class="events-scheduled">
           <ul class="list-unstyled">
             <li><a href="#" data-bs-toggle="modal" data-bs-target = "#SwamiMahrajModal">Special Program with HH Vedavyasapriya Swami Maharaj<span>June 17th - 18th from 7 - 8:30 P.M.</span></a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target = "#">Festival of Joy<span>Sep 7th</span></a></li>
+            <li><a href="https://festivalofjoyokc.org/" target="_new">Festival of Joy<span>Sep 7th</span></a></li>
             <li><a href="#" data-bs-toggle="modal" data-bs-target = "#RathaYatraModal">Festival of Joy Ratha Yatra Fest Prep!<span>July 13 thru Aug 31 Times TBD</span></a></li>
             <li><a href="#" data-bs-toggle="modal" data-bs-target = "#VrindavanDasModal">Special Program by His Grace Vrindavan Prabhu<span>June 9th - 10th from 7 - 9 P.M.</span></a></li>
             <li><a href="#" data-bs-toggle="modal">Narasimha Chaturdasi<span>May 11th</span></a></li>
@@ -230,7 +261,7 @@ https://templatemo.com/tm-583-festava-live
             <img src="images/FestivalofJoyflyer_page-0001.jpg" alt="Festival" class="img-fluid mb-3 rounded">
             <h3 style="color:rgb(184, 45, 45)">Festival of Joy</h2>
             <p class="mb-4">Sep 7th</p>
-            <a href="#" class="btn btn-primary btn-sm" >Coming Soon!</a>
+            <a href="https://festivalofjoyokc.org/" target="_new" class="btn btn-primary btn-sm" >Click here to visit site!</a>
         </div>
 z
         <div class="announcement-card p-4 rounded shadow">
@@ -826,6 +857,24 @@ T e m p l a t e M o
         <script src="carouselclick.js"></script>
         <script src="js/carousel.js"></script>
         <script>
+            // Show announcement popup
+            window.onload = function() {
+                const popup = document.getElementById('announcementPopup');
+                if (popup) {
+                    // Add show class to trigger fade in
+                    popup.classList.add('show');
+                    
+                    // Remove show class after 3.5 seconds to start fade out
+                    setTimeout(function() {
+                        popup.classList.remove('show');
+                        // Remove element from DOM after fade out completes
+                        setTimeout(function() {
+                            popup.style.display = 'none';
+                        }, 500);
+                    }, 3500);
+                }
+            };
+
             document.getElementById('sponsor-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
