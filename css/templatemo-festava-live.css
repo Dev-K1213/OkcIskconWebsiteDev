@@ -6,48 +6,46 @@ https://templatemo.com/tm-583-festava-live
 
 */
 
-
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
-  --white-color:                  #ffffff;
-  --primary-color:                #F8CB2E;
-  --secondary-color:              #EE5007;
-  --section-bg-color:             #f0f8ff;
-  --custom-btn-bg-color:          #EE5007;
-  --custom-btn-bg-hover-color:    #c01f27;
-  --dark-color:                   #000000;
-  --p-color:                      #717275;
-  --border-color:                 #7fffd4;
-  --link-hover-color:             #B22727;
+  --white-color: #ffffff;
+  --primary-color: #f8cb2e;
+  --secondary-color: #ee5007;
+  --section-bg-color: #f0f8ff;
+  --custom-btn-bg-color: #ee5007;
+  --custom-btn-bg-hover-color: #c01f27;
+  --dark-color: #000000;
+  --p-color: #717275;
+  --border-color: #7fffd4;
+  --link-hover-color: #b22727;
 
-  --body-font-family:             'Outfit', sans-serif;
+  --body-font-family: "Outfit", sans-serif;
 
-  --h1-font-size:                 74px;
-  --h2-font-size:                 46px;
-  --h3-font-size:                 32px;
-  --h4-font-size:                 28px;
-  --h5-font-size:                 24px;
-  --h6-font-size:                 22px;
-  --p-font-size:                  18px;
-  --btn-font-size:                14px;
-  --copyright-font-size:          16px;
+  --h1-font-size: 74px;
+  --h2-font-size: 46px;
+  --h3-font-size: 32px;
+  --h4-font-size: 28px;
+  --h5-font-size: 24px;
+  --h6-font-size: 22px;
+  --p-font-size: 18px;
+  --btn-font-size: 14px;
+  --copyright-font-size: 16px;
 
-  --border-radius-large:          100px;
-  --border-radius-medium:         20px;
-  --border-radius-small:          10px;
+  --border-radius-large: 100px;
+  --border-radius-medium: 20px;
+  --border-radius-small: 10px;
 
-  --font-weight-light:            300;
-  --font-weight-normal:           400;
-  --font-weight-bold:             700;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 }
 
 body {
   background-color: var(--white-color);
-  font-family: var(--body-font-family); 
+  font-family: var(--body-font-family);
 }
-
 
 /*---------------------------------------
   TYPOGRAPHY               
@@ -106,7 +104,7 @@ ul li {
   font-weight: var(--font-weight-light);
 }
 
-a, 
+a,
 button {
   touch-action: manipulation;
   transition: all 0.3s;
@@ -145,12 +143,12 @@ strong {
 
 .link-fx-1:hover::before {
   transform: translateX(17px) scaleX(0);
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .link-fx-1:hover .icon circle {
   stroke-dashoffset: 200;
-  transition: stroke-dashoffset .2s .1s;
+  transition: stroke-dashoffset 0.2s 0.1s;
 }
 
 .link-fx-1:hover .icon line {
@@ -170,7 +168,7 @@ strong {
   height: 1px;
   background-color: currentColor;
   transform-origin: right center;
-  transition: transform .2s .1s;
+  transition: transform 0.2s 0.1s;
 }
 
 .link-fx-1 .icon {
@@ -196,18 +194,17 @@ strong {
 .link-fx-1 .icon circle {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  transition: stroke-dashoffset .2s;
+  transition: stroke-dashoffset 0.2s;
 }
 
 .link-fx-1 .icon line {
-  transition: transform .4s;
+  transition: transform 0.4s;
   transform-origin: 13px 15px;
 }
 
 .link-fx-1 .icon line:last-child {
   transform-origin: 19px 15px;
 }
-
 
 /*---------------------------------------
   SECTION               
@@ -260,26 +257,25 @@ strong {
   margin-right: 15px;
 }
 
-.nav-tabs .nav-item.show .nav-link, 
+.nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active,
-.nav-tabs .nav-link:focus, 
+.nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
   background: var(--white-color);
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   color: var(--primary-color);
 }
 
 .nav-tabs h5 {
-  color: var(--p-color); 
+  color: var(--p-color);
   margin-bottom: 0;
 }
 
 .nav-tabs .nav-link.active h5,
-.nav-tabs .nav-link:focus h5, 
+.nav-tabs .nav-link:focus h5,
 .nav-tabs .nav-link:hover h5 {
   color: var(--primary-color);
 }
-
 
 /*---------------------------------------
   CUSTOM ICON COLOR               
@@ -287,7 +283,6 @@ strong {
 .custom-icon {
   color: var(--secondary-color);
 }
-
 
 /*---------------------------------------
   CUSTOM BUTTON               
@@ -327,7 +322,6 @@ strong {
   color: var(--white-color);
 }
 
-
 /*---------------------------------------
   VIDEO              
 -----------------------------------------*/
@@ -344,7 +338,6 @@ strong {
   height: 100%;
 }
 
-
 /*---------------------------------------
   SITE HEADER              
 -----------------------------------------*/
@@ -353,7 +346,6 @@ strong {
   padding-top: 12px;
   padding-bottom: 12px;
 }
-
 
 /*---------------------------------------
   NAVIGATION              
@@ -371,7 +363,6 @@ strong {
     margin-top: 0;
   }
 }
-
 
 .sticky-wrapper.is-sticky .navbar {
   background-color: var(--dark-color);
@@ -405,7 +396,7 @@ strong {
   padding-bottom: 15px;
 }
 
-.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
   color: var(--secondary-color);
 }
@@ -431,9 +422,16 @@ strong {
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-  transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
-  transition: top 300ms 50ms ease, transform 300ms 350ms ease;
-  transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+  transition:
+    top 300ms 50ms ease,
+    -webkit-transform 300ms 350ms ease;
+  transition:
+    top 300ms 50ms ease,
+    transform 300ms 350ms ease;
+  transition:
+    top 300ms 50ms ease,
+    transform 300ms 350ms ease,
+    -webkit-transform 300ms 350ms ease;
   top: 0;
 }
 
@@ -456,16 +454,23 @@ strong {
 
 .navbar-toggler .navbar-toggler-icon:before,
 .navbar-toggler .navbar-toggler-icon:after {
-  transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
-  transition: top 300ms 350ms ease, transform 300ms 50ms ease;
-  transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+  transition:
+    top 300ms 350ms ease,
+    -webkit-transform 300ms 50ms ease;
+  transition:
+    top 300ms 350ms ease,
+    transform 300ms 50ms ease;
+  transition:
+    top 300ms 350ms ease,
+    transform 300ms 50ms ease,
+    -webkit-transform 300ms 50ms ease;
   position: absolute;
   right: 0;
   left: 0;
   background: var(--white-color);
   width: 30px;
   height: 2px;
-  content: '';
+  content: "";
 }
 
 .navbar-toggler .navbar-toggler-icon::before {
@@ -475,7 +480,6 @@ strong {
 .navbar-toggler .navbar-toggler-icon::after {
   top: 8px;
 }
-
 
 /*---------------------------------------
   HERO        
@@ -508,12 +512,11 @@ strong {
   height: 100%;
 }
 
-
 /*---------------------------------------
   ABOUT              
 -----------------------------------------*/
 .about-section {
-  background-image: url('../images/image.png');
+  background-image: url("../images/image.png");
   background-color: #704010;
   background-repeat: no-repeat;
   background-size: cover;
@@ -553,12 +556,11 @@ strong {
   padding: 35px;
 }
 
-
 /*---------------------------------------
   TICKET               
 -----------------------------------------*/
 .ticket-section {
-  background-image: url('../images/nicholas-green-unsplash-blur.jpg');
+  background-image: url("../images/nicholas-green-unsplash-blur.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -589,18 +591,17 @@ strong {
   height: 100%;
 }
 
-
 /*---------------------------------------
   Event             
 -----------------------------------------*/
 /* General section styling */
 .announcements-section {
-  background-image: url('../images/annoucementblur.jpg');
+  background-image: url("../images/annoucementblur.jpg");
   background-color: #704010;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  
+
   /* Increased size for the whole section */
   min-height: 700px; /* Adjust this value to make the section taller overall */
   padding-top: 100px; /* Increased padding top for more space above content */
@@ -680,7 +681,7 @@ strong {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   /* Increased height for the cards to accommodate larger image */
   min-height: 550px; /* Significantly increased min-height for cards */
 }
@@ -694,10 +695,10 @@ strong {
   height: auto;
   flex-grow: 1; /* Image takes available space */
   object-fit: contain; /* Ensure full image is visible */
-  
+
   /* Make image take up even more space within the card */
   max-height: 95%; /* Image can now take up to 85% of the card height */
-  
+
   margin-bottom: 0.5rem; /* More space between image and text */
   border-radius: 0.5rem; /* Larger border-radius for the image */
 }
@@ -752,10 +753,10 @@ strong {
 
 /* Modal image responsiveness (unchanged) */
 .modal-body img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Responsive Adjustments (updated min-heights for larger cards) */
@@ -770,7 +771,8 @@ strong {
 }
 
 @media (max-width: 767px) {
-  .col-md-4, .col-md-8 {
+  .col-md-4,
+  .col-md-8 {
     width: 100%;
   }
   .events-scheduled {
@@ -806,7 +808,6 @@ strong {
   background-size: cover;
 }
 
-
 .calendar-embed {
   margin-top: 40px;
 }
@@ -815,7 +816,6 @@ strong {
   margin-bottom: 70px;
   color: white;
   text-align: center;
-
 }
 
 .uniform-box {
@@ -823,13 +823,13 @@ strong {
   overflow: hidden; /* Ensures the image doesn't distort the box */
 }
 
-
 .rounded {
   border-radius: 10px; /* Adjust the value for more or less rounded corners */
 }
 
 /* Explicitly set the bottom row to use flexbox on larger screens */
-@media (min-width: 992px) { /* lg breakpoint */
+@media (min-width: 992px) {
+  /* lg breakpoint */
   .bottom-row {
     display: flex;
     flex-direction: row;
@@ -858,14 +858,17 @@ strong {
 
 .schedule-thumb {
   background-color: rgb(255, 255, 255); /* Set the background to black */
-  color: rgb(0, 0, 0); /* Set the default text color to white for better contrast */
+  color: rgb(
+    0,
+    0,
+    0
+  ); /* Set the default text color to white for better contrast */
   text-align: center; /* Center the content horizontally */
   padding: 20px; /* Add some padding around the content */
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 .schedule-image-wrap {
-  
   max-width: 100%;
   height: auto;
   margin-bottom: 10px; /* Add some space between the image and text */
@@ -874,13 +877,12 @@ strong {
 }
 
 .schedule-image {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
   max-width: 100%; /* Ensure image doesn't exceed container */
   display: block; /* Remove any default inline spacing */
   margin: 0 auto; /* Center the image horizontally */
 }
-
 
 .schedule-hover p {
   margin-bottom: 5px; /* Adjust spacing between text lines */
@@ -906,53 +908,53 @@ strong {
 }
 
 .schedule-item {
-    border: 1px solid #ddd; /* Light grey border */
-    border-radius: 5px;
-    overflow: hidden; /* To contain rounded corners of image and info box */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 5px;
+  overflow: hidden; /* To contain rounded corners of image and info box */
 }
 
 .schedule-info {
-    background-color: white;
-    padding: 15px;
-    text-align: center;
+  background-color: white;
+  padding: 15px;
+  text-align: center;
 }
 .schedule-info h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-size: 1.2em; 
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.2em;
 }
 
 .schedule-info p.schedule-category {
-    margin-bottom: 0;
-    font-size: 0.9em; 
-    color: #777;
+  margin-bottom: 0;
+  font-size: 0.9em;
+  color: #777;
 }
 
 .schedule-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    color: white; /* Text color for the overlay */
-    font-size: 2em; 
-    text-decoration: none; /* Remove link underline if needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  color: white; /* Text color for the overlay */
+  font-size: 2em;
+  text-decoration: none; /* Remove link underline if needed */
 }
 
 .schedule-image-wrap:hover .schedule-overlay {
-    opacity: 1; /* Show overlay on hover */
+  opacity: 1; /* Show overlay on hover */
 }
 
 .schedule-overlay::before {
-    content: "View";
-    font-size: 1.5em;
-    text-transform: uppercase;
+  content: "View";
+  font-size: 1.5em;
+  text-transform: uppercase;
 }
 
 ::marker {
@@ -966,7 +968,6 @@ strong {
 .google-map {
   border-radius: var(--border-radius-medium);
 }
-
 
 /*---------------------------------------
   CUSTOM FORM               
@@ -996,7 +997,6 @@ strong {
   border-color: transparent;
 }
 
-
 /*---------------------------------------
   SITE FOOTER              
 -----------------------------------------*/
@@ -1009,7 +1009,7 @@ strong {
 
 .site-footer-top {
   background-color: var(--secondary-color);
-  background-image: url('../images/nainoa-shizuru-NcdG9mK3PBY-unsplash.jpg');
+  background-image: url("../images/nainoa-shizuru-NcdG9mK3PBY-unsplash.jpg");
   background-repeat: no-repeat;
   margin-bottom: 70px;
   padding-top: 30px;
@@ -1022,7 +1022,7 @@ strong {
 }
 
 .site-footer-title {
-  color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
 .site-footer-link,
@@ -1043,7 +1043,6 @@ strong {
 .copyright-text {
   font-size: var(--copyright-font-size);
 }
-
 
 /*---------------------------------------
   SOCIAL ICON               
@@ -1070,7 +1069,9 @@ strong {
   width: 35px;
   height: 35px;
   line-height: 36px;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .social-icon-link:hover {
@@ -1082,19 +1083,18 @@ strong {
   display: block;
 }
 
-.social-icon-link span:hover::before{
+.social-icon-link span:hover::before {
   animation: spinAround 2s linear infinite;
 }
 
 @keyframes spinAround {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
 }
-
 
 /*---------------------------------------
   RESPONSIVE STYLES               
@@ -1128,7 +1128,7 @@ strong {
     padding-top: 50px;
     padding-bottom: 50px;
   }
-  
+
   .navbar {
     background-color: var(--dark-color);
   }
@@ -1157,7 +1157,7 @@ strong {
     padding: 20px;
   }
 
-  .schedule-table tr, 
+  .schedule-table tr,
   .schedule-table td {
     padding: 25px;
   }
@@ -1199,4 +1199,3 @@ strong {
     font-size: 20px;
   }
 }
-
