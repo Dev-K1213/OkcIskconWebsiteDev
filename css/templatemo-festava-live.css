@@ -1199,3 +1199,30 @@ strong {
     font-size: 20px;
   }
 }
+/* Specific styling for cards without images */
+.announcement-card.text-card {
+    width: 300px;
+    /* Reduce this value to shorten the card */
+    min-height: 550px; 
+    
+    /* This ensures content stays centered in the new smaller height */
+    justify-content: center; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Optional: tighten up the spacing inside the text-content */
+.text-card .text-content h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.announcement-card.text-card h3 {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.announcement-card.text-card p {
+    margin-bottom: 1.5rem;
+}
