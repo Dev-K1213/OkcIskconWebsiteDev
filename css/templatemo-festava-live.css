@@ -618,12 +618,29 @@ strong {
 /* Left column (Events List) (mostly unchanged, minor adjustments for vertical spacing) */
 .events-scheduled {
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 25px; /* Slightly more padding */
+  padding: 25px;
   border-radius: 10px;
-  height: 100%;
+  height: 750px;        /* Match the card height */
+  max-height: 750px;
+  overflow-y: auto;     /* Makes it scrollable */
   box-sizing: border-box;
   color: #ffffff;
-  margin-bottom: 30px; /* More space on smaller screens */
+  margin-bottom: 30px;
+}
+
+.events-scheduled::-webkit-scrollbar {
+  width: 8px;
+}
+.events-scheduled::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+.events-scheduled::-webkit-scrollbar-thumb {
+  background: #d97706;
+  border-radius: 10px;
+}
+.events-scheduled::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
 }
 
 .events-scheduled ul {
